@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://boa58fv4ia0rt"]
+
+[ext_resource type="Texture2D" uid="uid://dyqr3rrkhyg1f" path="res://general/assets/material/floor_tex.png" id="1_0ef2s"]
+
+[resource]
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_0ef2s")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv2_scale = Vector3(0.5, 0.5, 0.5)
+texture_filter = 5

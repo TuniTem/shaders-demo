@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://d1npliduosk5y"]
+
+[ext_resource type="Material" uid="uid://boa58fv4ia0rt" path="res://general/assets/material/floor.tres" id="1_ciee5"]
+[ext_resource type="PackedScene" uid="uid://twfb4ut3n628" path="res://general/player.tscn" id="2_xilss"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yowdh"]
+sky_top_color = Color(0.5692026, 0.34229672, 0.5766325, 1)
+sky_horizon_color = Color(0.47462308, 0.43425852, 0.5611069, 1)
+sky_curve = 0.23537648
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.3647059, 0.32941177, 0.4392157, 1)
+ground_curve = 0.038637936
+sun_angle_max = 0.84
+sun_curve = 5.708184
+
+[sub_resource type="Sky" id="Sky_ciee5"]
+sky_material = SubResource("ProceduralSkyMaterial_yowdh")
+
+[sub_resource type="Environment" id="Environment_yowdh"]
+background_mode = 2
+sky = SubResource("Sky_ciee5")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 0.97
+glow_strength = 0.84
+glow_blend_mode = 0
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 0.63
+glow_hdr_luminance_cap = 45.17
+fog_light_color = Color(0.45980996, 0.39420003, 0.54, 1)
+fog_depth_end = 780.2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xilss"]
+load_path = "res://.godot/imported/floor_tex.png-90c99f0b4f6b9d6b6eabe27a7dd66193.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdfwx"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.6298657, 0, 0.48589978, 1)
+albedo_texture = SubResource("CompressedTexture2D_xilss")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv2_scale = Vector3(0.5, 0.5, 0.5)
+texture_filter = 5
+
+[node name="Main" type="Node3D" unique_id=1036052949]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=98279211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10318756, 0)
+use_collision = true
+size = Vector3(7359.42, 0.20019531, 5788.1953)
+material = ExtResource("1_ciee5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2118857391]
+environment = SubResource("Environment_yowdh")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1165458277]
+transform = Transform3D(1, 0, 0, 0, 0.8017037, 0.5977217, 0, -0.5977217, 0.8017037, 0, 7.270896, 0)
+
+[node name="Player" parent="." unique_id=1800358466 instance=ExtResource("2_xilss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03460908, 0)
+
+[node name="LevelObjects" type="Node3D" parent="." unique_id=1802686580]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelObjects" unique_id=2103741876]
+transform = Transform3D(1.0401604, 0, 0.4486183, 0, 1.1327807, 0, -0.4486183, 0, 1.0401604, 3.2250724, 2.1567233, 3.2441673)
+use_collision = true
+size = Vector3(1, 1.137207, 1)
+material = SubResource("StandardMaterial3D_gdfwx")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelObjects" unique_id=1785701513]
+transform = Transform3D(0.5915826, 0, 0.949704, 0, 1.118887, 0, -0.949704, 0, 0.5915826, 3.4870274, 3.1262946, -5.156355)
+use_collision = true
+size = Vector3(1, 1.137207, 1)
+material = SubResource("StandardMaterial3D_gdfwx")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelObjects" unique_id=169259137]
+transform = Transform3D(1.8407946, 0, -0.4238169, 0, 1.8889538, 0, 0.4238169, 0, 1.8407946, -3.1712706, -0.055827975, 2.1441884)
+use_collision = true
+size = Vector3(1, 1.137207, 1)
+material = SubResource("StandardMaterial3D_gdfwx")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelObjects" unique_id=81075175]
+transform = Transform3D(2.2280922, 0, 2.0066977, 0, 2.9985387, 0, -2.0066977, 0, 2.2280922, -4.312026, 0.33772457, 0.8343582)
+use_collision = true
+size = Vector3(1, 1.137207, 1)
+material = SubResource("StandardMaterial3D_gdfwx")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="LevelObjects" unique_id=34264851]
+transform = Transform3D(-0.15457137, -0.32415903, 2.404205, -2.061444, 1.2876081, 0.04107356, -1.2789558, -2.0362124, -0.3567692, -5.075818, 3.0030599, -4.819581)
+use_collision = true
+size = Vector3(1, 1.137207, 1)
+material = SubResource("StandardMaterial3D_gdfwx")

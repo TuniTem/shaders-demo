@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://twfb4ut3n628"]
+
+[ext_resource type="Script" uid="uid://cwaywvg6uawd1" path="res://general/player.gd" id="1_dm71k"]
+[ext_resource type="AudioStream" uid="uid://c8xynsgvsdhmw" path="res://general/assets/sounds/footstep-rock1.wav" id="2_giciw"]
+[ext_resource type="AudioStream" uid="uid://cph5c8cfr7hu3" path="res://general/assets/sounds/footstep-rock2.wav" id="3_qkcuc"]
+[ext_resource type="AudioStream" uid="uid://bggl418poaydc" path="res://general/assets/sounds/footstep-rock3.wav" id="4_0a551"]
+[ext_resource type="AudioStream" uid="uid://by0fp1yuqyago" path="res://general/assets/sounds/footstep-rock4.wav" id="5_tmyxc"]
+[ext_resource type="AudioStream" uid="uid://cyl4o35opl2p7" path="res://general/assets/sounds/footstep-rock5.wav" id="6_ewg24"]
+[ext_resource type="AudioStream" uid="uid://ocypo3aclsd6" path="res://general/assets/sounds/footstep-rock6.wav" id="7_gg54g"]
+[ext_resource type="AudioStream" uid="uid://k6hrbr2do5sq" path="res://general/assets/sounds/footstep-rock7.wav" id="8_0pffj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wam0f"]
+albedo_color = Color(0.31819677, 0.21585914, 0.33421826, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wam0f"]
+height = 1.7456055
+
+[sub_resource type="Animation" id="Animation_dm71k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0109, 1.473, -0.2835)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.56260455, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/CSGBox3D:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.22558594, 1.1209869, 0.53808594)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/CSGSphere3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.4707559, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cvdqf"]
+resource_name = "crouch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 0.23325846),
+"update": 0,
+"values": [Vector3(0.0109, 1.473, -0.2835), Vector3(0.010863006, 0.9422349, -0.28353494)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 1),
+"update": 0,
+"values": [Vector3(0, 0.56260455, 0), Vector3(0, 0.31067812, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/CSGBox3D:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 1),
+"update": 0,
+"values": [Vector3(0.22558594, 1.1209869, 0.53808594), Vector3(0.22558594, 0.6171341, 0.53808594)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/CSGSphere3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 1),
+"update": 0,
+"values": [Vector3(0, 1.4707559, 0), Vector3(0, 0.9417074, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mybyn"]
+resource_name = "uncrouch"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 0.23325846),
+"update": 0,
+"values": [Vector3(0.010863006, 0.9422349, -0.28353494), Vector3(0.0109, 1.473, -0.2835)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 0.23325846),
+"update": 0,
+"values": [Vector3(0, 0.31067812, 0), Vector3(0, 0.56260455, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/CSGBox3D:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 0.23325846),
+"update": 0,
+"values": [Vector3(0.22558594, 0.6171341, 0.53808594), Vector3(0.22558594, 1.1209869, 0.53808594)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/CSGSphere3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.23325846, 0.23325846),
+"update": 0,
+"values": [Vector3(0, 0.9417074, 0), Vector3(0, 1.4707559, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mybyn"]
+_data = {
+&"RESET": SubResource("Animation_dm71k"),
+&"crouch": SubResource("Animation_cvdqf"),
+&"uncrouch": SubResource("Animation_mybyn")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dm71k"]
+random_pitch = 1.5201004
+streams_count = 7
+stream_0/stream = ExtResource("2_giciw")
+stream_1/stream = ExtResource("3_qkcuc")
+stream_2/stream = ExtResource("4_0a551")
+stream_3/stream = ExtResource("5_tmyxc")
+stream_4/stream = ExtResource("6_ewg24")
+stream_5/stream = ExtResource("7_gg54g")
+stream_6/stream = ExtResource("8_0pffj")
+
+[node name="Player" type="CharacterBody3D" unique_id=1800358466 node_paths=PackedStringArray("held_look_transform", "camera")]
+script = ExtResource("1_dm71k")
+held_look_transform = NodePath("Camera3D/Held")
+camera = NodePath("Camera3D")
+
+[node name="Model" type="Node3D" parent="." unique_id=450421577]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Model" unique_id=928868626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56260455, 0)
+size = Vector3(0.22558594, 1.1209869, 0.53808594)
+material = SubResource("StandardMaterial3D_wam0f")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Model" unique_id=1141834144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4707559, 0)
+visible = false
+radius = 0.26590884
+material = SubResource("StandardMaterial3D_wam0f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=986005815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8655962, 0)
+shape = SubResource("CapsuleShape3D_wam0f")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=892510898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109, 1.473, -0.2835)
+
+[node name="Held" type="Node3D" parent="Camera3D" unique_id=1279047848]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.40190443, 0.044027925, -0.44547838)
+
+[node name="CameraParent" type="Node3D" parent="." unique_id=1327544405]
+
+[node name="Animations" type="AnimationPlayer" parent="." unique_id=1528664479]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_mybyn")
+
+[node name="Footstep" type="AudioStreamPlayer" parent="." unique_id=8038102]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_dm71k")
+volume_db = -22.5027
+pitch_scale = 0.54
