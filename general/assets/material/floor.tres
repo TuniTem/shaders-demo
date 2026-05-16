@@ -4,6 +4,7 @@
 
 [resource]
 vertex_color_is_srgb = true
+albedo_color = Color(0.6830772, 0.6830774, 0.6830771, 1)
 albedo_texture = ExtResource("1_0ef2s")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true

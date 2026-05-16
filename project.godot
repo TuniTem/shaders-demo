@@ -13,6 +13,7 @@ config_version=5
 config/name="ShaderDemo"
 run/main_scene="uid://d1npliduosk5y"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 
 [display]
 
@@ -85,3 +86,4 @@ take_picture={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

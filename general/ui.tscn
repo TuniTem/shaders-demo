@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://b28u5uq0g6dsr"]
 
 [ext_resource type="Script" uid="uid://dfopo57k2clpr" path="res://general/ui.gd" id="1_lm33j"]
+[ext_resource type="FontFile" uid="uid://c1tiv7sd0hvjc" path="res://general/assets/fonts/TT Octosquares Trial Black.ttf" id="2_dnsv6"]
+
+[sub_resource type="FontVariation" id="FontVariation_dnsv6"]
+base_font = ExtResource("2_dnsv6")
+variation_embolden = -1.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_q5w7j"]
+font = SubResource("FontVariation_dnsv6")
+font_size = 14
 
 [node name="UI" type="Control" unique_id=953783113]
 layout_mode = 3
@@ -10,3 +19,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lm33j")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=213790755]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1169737203]
+layout_mode = 2
+text = "Middle mouse to pull up camera
+Left click to capture
+Photos save in the \"user://\" directory by default"
+label_settings = SubResource("LabelSettings_q5w7j")

@@ -69,7 +69,6 @@ script = ExtResource("1_46fqt")
 shader = SubResource("ShaderMaterial_46fqt")
 
 [node name="DOF" type="WorldEnvironment" parent="CameraViewport" unique_id=1907226474]
-camera_attributes = SubResource("CameraAttributesPhysical_neucl")
 
 [node name="ScreenspaceShader" type="ColorRect" parent="CameraViewport" unique_id=201488884]
 material = SubResource("ShaderMaterial_46fqt")

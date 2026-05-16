@@ -96,4 +96,3 @@ size = Vector3(1, 1.137207, 1)
 material = SubResource("StandardMaterial3D_gdfwx")
 
 [node name="UI" parent="." unique_id=953783113 instance=ExtResource("3_gdfwx")]
-visible = false

@@ -271,6 +271,7 @@ camera = NodePath("Camera3D")
 
 [node name="RealisticCamera" parent="." unique_id=22022219 node_paths=PackedStringArray("camera_transform_track", "default_camera") instance=ExtResource("2_qkcuc")]
 unique_name_in_owner = true
+visible = false
 texture = SubResource("ViewportTexture_qkcuc")
 focal_distance = 1.411
 zoom = 99.401
