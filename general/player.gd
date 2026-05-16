@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-# VOTV-like Character controller
+# VOTV-like Character controller, feel free to use!
 
 # Movement settings
 enum Movement {
@@ -15,7 +15,7 @@ const SENSITIVITY = 1.0
 const MAX_CROUCH_SPEED = 2.0
 const MAX_WALK_SPEED = 4.0
 const MAX_RUN_SPEED = 6.5
-const ACCEL = 20.0
+const ACCEL = 30.0
 const GRAVITY = 30.0
 const TERMINAL_VELOCITY = 30.0
 const DRAG = 20.0
@@ -50,7 +50,7 @@ const RUN_LOOK_DOWN_AMMOUNT : float = 0.03
 
 # Zoom
 const ZOOM_AMMOUNT = 0.5
-const ZOOM_SPEED = 3.0
+const ZOOM_SPEED = 7.0
 var zoom : bool = false
 
 # Headbob
@@ -112,8 +112,8 @@ func _process(delta: float) -> void:
 	# Footstep audio
 	if Input.get_action_strength("forward") - Input.get_action_strength("backward") > DEADZOME and is_on_floor():
 		footstep_timer += delta
-		if footstep_timer > FOOTSTEP_TIME:
-			footstep_timer -= FOOTSTEP_TIME
+		if footstep_timer > 1.0 / HEADBOB_AMOUNT[movement_state]["wavelength"].y:
+			footstep_timer -= 1.0 / HEADBOB_AMOUNT[movement_state]["wavelength"].y
 			footstep.play()
 		
 	else: footstep_timer = 0.0
@@ -195,6 +195,9 @@ func breathe(wavelength_seconds : float, amplitude : float, use_sin : bool = tru
 	else:
 		return cos((TIME - phase) * wavelength_seconds * TAU) * amplitude
 
+func jump():
+	velocity.y = JUMP_HEIGHT
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and mouse_captured:
 		var delta_look_dir = event.relative * SENSITIVITY * 0.005
@@ -223,6 +226,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
 		mouse_captured = !mouse_captured
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if mouse_captured else Input.MOUSE_MODE_VISIBLE)
+	
+	# basic realistic camera implementation
+	if event.is_action_pressed("camera"):
+		realistic_camera.toggle_visual()
+	
+	if event.is_action_pressed("take_picture") and realistic_camera.active:
+		realistic_camera.capture_and_save(true)
 
-func jump():
-	velocity.y = JUMP_HEIGHT
+@onready var realistic_camera: RealisticCamera = %RealisticCamera

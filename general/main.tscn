@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://boa58fv4ia0rt" path="res://general/assets/material/floor.tres" id="1_ciee5"]
 [ext_resource type="PackedScene" uid="uid://twfb4ut3n628" path="res://general/player.tscn" id="2_xilss"]
+[ext_resource type="PackedScene" uid="uid://b28u5uq0g6dsr" path="res://general/ui.tscn" id="3_gdfwx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yowdh"]
 sky_top_color = Color(0.5692026, 0.34229672, 0.5766325, 1)
@@ -93,3 +94,6 @@ transform = Transform3D(-0.15457137, -0.32415903, 2.404205, -2.061444, 1.2876081
 use_collision = true
 size = Vector3(1, 1.137207, 1)
 material = SubResource("StandardMaterial3D_gdfwx")
+
+[node name="UI" parent="." unique_id=953783113 instance=ExtResource("3_gdfwx")]
+visible = false
